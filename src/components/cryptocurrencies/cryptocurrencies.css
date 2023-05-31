@@ -1,0 +1,73 @@
+.cryptocurrencies {
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.cryptocurrencies .search {
+  width: 100%;
+  max-width: 80%;
+  margin-bottom: 20px;
+  position: relative;
+}
+.cryptocurrencies .search input {
+  width: 100%;
+  padding: 5px 10px;
+  font-size: 20px;
+  border: 1px solid var(--bgbox);
+  background-color: transparent;
+  caret-color: var(--bgbox);
+  border-radius: 8px;
+  outline: none;
+  transition: var(--main-trans);
+}
+.cryptocurrencies .search input:focus {
+  background-color: rgb(63 81 181 / 30%);
+  outline: none;
+  border: none;
+  box-shadow: -3px 3px 8px 0 #7e7e7e;
+}
+
+.cryptocurrencies .search .close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  display: none;
+  align-items: center;
+  font-size: 20px;
+  padding: 10px;
+  cursor: pointer;
+  transition: var(--main-trans);
+}
+.cryptocurrencies .search .close.active {
+  display: flex;
+}
+.cryptocurrencies .crypto-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+.cryptocurrencies .crypto-container .box {
+  color: #fff;
+  padding: 30px 20px;
+  background-color: var(--bgbox);
+  border-radius: 8px;
+  box-shadow: -3px 4px 8px 1px #000;
+  transition: var(--main-trans);
+}
+.cryptocurrencies .crypto-container .box:hover {
+  transform: translateY(-10px);
+}
+.cryptocurrencies .crypto-container .box .content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.cryptocurrencies .crypto-container .box .content img {
+  max-width: 50px;
+}
+.cryptocurrencies .crypto-container .box .detiles p:not(:last-child) {
+  margin-bottom: 5px;
+}

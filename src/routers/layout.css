@@ -1,0 +1,14 @@
+.layout {
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+.layout main {
+  flex: 1;
+}
+
+@media (max-width: 991px) {
+  .layout {
+    flex-direction: column;
+  }
+}

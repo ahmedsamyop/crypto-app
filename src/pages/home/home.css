@@ -1,0 +1,63 @@
+.home {
+  background-color: var(--bgcolor);
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.home .global {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.home .global h1 {
+  font-weight: 500;
+  color: var(--main-color);
+}
+.home .global .box-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.home .global .box-container .box {
+  width: calc((100% - 20px) / 2);
+  padding: 20px;
+}
+.home .global .box-container .box p {
+  color: var(--main-p);
+  margin-bottom: 10px;
+}
+.home .global .box-container .box h4 {
+  color: var(--bgbox);
+  font-size: 25px;
+}
+
+.home .section {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.home .section .heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.home .section .heading a {
+  font-size: 25px;
+  color: var(--pink);
+  font-weight: bold;
+}
+
+.home .section .cryptocurrencies,
+.home .section .news {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+@media (max-width: 767px) {
+  .home .section .heading h1 {
+    font-size: 20px;
+    max-width: 190px;
+  }
+  .home .section .heading a {
+    font-size: 18px;
+  }
+}

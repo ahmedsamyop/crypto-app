@@ -1,0 +1,18 @@
+.error {
+  padding: 20px 0;
+  text-align: center;
+  background-color: var(--main-color);
+  color: #fff;
+}
+.error .content {
+  background: #0c6490;
+  background: radial-gradient(
+    circle farthest-corner at center center,
+    #f6f8f9 0%,
+    #218ec5 30%,
+    #d7dee3 60%,
+    #1f76cc 100%
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

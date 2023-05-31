@@ -1,0 +1,40 @@
+.error-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  background-color: var(--main-color);
+  color: #fff;
+}
+.error-page .content {
+  text-align: center;
+  background: #0c6490;
+  background: radial-gradient(
+    circle farthest-corner at center center,
+    #f6f8f9 0%,
+    #218ec5 30%,
+    #d7dee3 60%,
+    #1f76cc 100%
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.error-page .content h1 {
+  font-size: 100px;
+  margin-bottom: 20px;
+}
+.error-page .content p {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+.error-page button {
+  padding: 10px 40px;
+  background-color: #fff;
+  color: var(--bgnews);
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: 8px;
+}

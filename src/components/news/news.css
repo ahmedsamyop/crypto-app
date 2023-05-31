@@ -1,0 +1,93 @@
+.news {
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.news .select-box {
+  width: 100%;
+  max-width: 80%;
+  margin-bottom: 20px;
+  position: relative;
+}
+.news .select-box select {
+  width: 100%;
+  padding: 5px 10px;
+  font-size: 20px;
+  border: 1px solid var(--bgbox);
+  background-color: transparent;
+  caret-color: var(--bgbox);
+  border-radius: 8px;
+  outline: none;
+  transition: var(--main-trans);
+}
+.news .select-box select:focus {
+  background-color: rgb(63 81 181 / 30%);
+  outline: none;
+  border: none;
+  box-shadow: -3px 3px 8px 0 #7e7e7e;
+}
+/* width */
+.news .select-box select::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+.news .select-box select::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+.news .select-box select::-webkit-scrollbar-thumb {
+  background: var(--bgnews);
+  border-radius: 10px;
+}
+.news .news-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+.news .news-container .box {
+  padding: 30px 20px;
+  background-color: var(--bgnews);
+  color: #fff;
+  border-radius: 8px;
+  box-shadow: -3px 4px 8px 1px #000;
+  transition: var(--main-trans);
+}
+.news .news-container .box:hover {
+  transform: translateY(-10px);
+}
+.news .news-container .box .head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.news .news-container .box .head img {
+  max-width: 70px;
+}
+.news .news-container .box p {
+  margin-bottom: 20px;
+}
+.news .news-container .box .bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.news .news-container .box .bottom .title {
+  display: flex;
+  align-items: center;
+}
+.news .news-container .box .bottom .title img {
+  width: 30px;
+  margin-right: 5px;
+}
+.news .news-container .box .bottom .title h3 {
+  font-size: 16px;
+}
+.news .news-container .box .bottom .time {
+  width: 150px;
+  font-size: 16px;
+}
