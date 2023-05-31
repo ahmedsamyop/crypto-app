@@ -1,0 +1,10 @@
+services:
+  crypto-app:
+    container_name: crypto-container
+    build: .
+    volumes:
+      - ./src:/app/src
+    ports:
+      - 4040:3000
+    env_file:
+      - ./.env
