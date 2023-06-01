@@ -50,6 +50,7 @@
 }
 .news .news-container .box {
   padding: 30px 20px;
+  min-height: 290px;
   background-color: var(--bgnews);
   color: #fff;
   border-radius: 8px;
