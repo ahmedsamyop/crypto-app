@@ -1,7 +1,7 @@
 version: 2.1
 
 jobs:
-  deply:
+  deploy:
     docker:
       - image: cimg/node:20.2.0
     steps:
@@ -41,4 +41,4 @@ jobs:
 workflows:
   deply_netlify:
     jobs:
-      - deply
+      - deploy
