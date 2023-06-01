@@ -38,7 +38,7 @@ jobs:
           name: Deploy at Netlify
           command: npm run deploy
 
-wrokflows:
+workflows:
   deply_netlify:
     jobs:
       - deply
