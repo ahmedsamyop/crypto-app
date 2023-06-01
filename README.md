@@ -4,7 +4,7 @@ React Crypto App : delivers the latest news and information on cryptocurrencies 
 
 ## Description
 
-The crypto app is an information and news aggregator that connects you with the most pertinent news and information on cryptocurrencies. The app offers real-time updates on all major cryptocurrencies, making it the go-to source for everything Crypto. Our easy to use interface provides you with all the latest information on cryptocurrency prices, charts, reviews and more.
+The crypto app is an information and news aggregator that connects you with the most pertinent news and information on cryptocurrencies. <br> The app offers real-time updates on all major cryptocurrencies, making it the go-to source for everything Crypto. <br> Our easy to use interface provides you with all the latest information on cryptocurrency prices, charts, reviews and more.
 
 ## Build and Start Project in Local Machine
 
