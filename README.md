@@ -1,7 +1,8 @@
 # crypto-app
 
-React Crypto App : delivers the latest news and information on cryptocurrencies in an easy to use format
+React Crypto App : delivers the latest news and information on cryptocurrencies in an easy to use format <br>
 
+[View Demo](https://shatot-crypto.netlify.app/)
 ## Description
 
 The crypto app is an information and news aggregator that connects you with the most pertinent news and information on cryptocurrencies. <br> The app offers real-time updates on all major cryptocurrencies, making it the go-to source for everything Crypto. <br> Our easy to use interface provides you with all the latest information on cryptocurrency prices, charts, reviews and more.
