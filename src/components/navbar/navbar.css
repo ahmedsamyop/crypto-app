@@ -1,6 +1,7 @@
 .nav {
   background-color: var(--main-color);
   width: 300px;
+  min-height: 100vh;
   padding: 20px;
   position: relative;
 }
