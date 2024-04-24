@@ -49,7 +49,6 @@
   gap: 20px;
 }
 .cryptocurrencies .crypto-container .box {
-  min-height: 235px;
   color: #fff;
   padding: 30px 20px;
   background-color: var(--bgbox);

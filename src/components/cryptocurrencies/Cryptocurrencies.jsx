@@ -1,51 +1,55 @@
-import React, { useEffect, useRef, useState } from "react";
-import millify from "millify";
-import { useGetCryptosQuery } from "../../services/cryptoApi";
+import React, { useEffect, useRef, useState } from 'react'
+import millify from 'millify'
+import { useGetCryptosQuery } from '../../services/cryptoApi'
 
-import LoadingCard from "../loading/LoadingCard";
-import ErrorFetch from "../../components/errorFetch/ErrorFetch";
+import LoadingCard from '../loading/LoadingCard'
+import ErrorFetch from '../../components/errorFetch/ErrorFetch'
 
-import "./cryptocurrencies.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faXmark } from "@fortawesome/free-solid-svg-icons";
-import useSearchRef from "../../hooks/useSearchRef";
-import { NavLink } from "react-router-dom";
+import './cryptocurrencies.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faXmark } from '@fortawesome/free-solid-svg-icons'
+import useSearchRef from '../../hooks/useSearchRef'
+import { NavLink } from 'react-router-dom'
+
+// React Lazy Load Image Component
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+import 'react-lazy-load-image-component/src/effects/blur.css'
 
 function Cryptocurrencies({ displayItems }) {
-  const counter = displayItems ? 10 : 50;
-  const { data, error, isLoading } = useGetCryptosQuery(counter);
-  const [cryptos, setCyptos] = useState([]);
-  const [search, setSearch] = useState("");
-  const searchRef = useSearchRef(search);
-  const inpputSearch = useRef();
-  const btnClose = useRef();
+  const counter = displayItems ? 10 : 50
+  const { data, error, isLoading } = useGetCryptosQuery(counter)
+  const [cryptos, setCyptos] = useState([])
+  const [search, setSearch] = useState('')
+  const searchRef = useSearchRef(search)
+  const inpputSearch = useRef()
+  const btnClose = useRef()
 
   useEffect(() => {
-    if (search === "") {
-      setCyptos(data?.data?.coins);
+    if (search === '') {
+      setCyptos(data?.data?.coins)
     }
     const searchFilter = data?.data?.coins.filter((crypto) =>
-      crypto.name.toLowerCase().includes(search.toLowerCase())
-    );
+      crypto.name.toLowerCase().includes(search.toLowerCase()),
+    )
     if (searchRef !== search) {
-      setCyptos(searchFilter);
+      setCyptos(searchFilter)
     }
-  }, [data, cryptos, search, searchRef]);
+  }, [data, cryptos, search, searchRef])
 
   const handelSearch = (e) => {
     if (search.length > 1) {
-      btnClose.current.classList.add("active");
+      btnClose.current.classList.add('active')
     } else {
-      btnClose.current.classList.remove("active");
+      btnClose.current.classList.remove('active')
     }
-    setSearch(e.target.value);
-  };
+    setSearch(e.target.value)
+  }
 
   const handelClose = () => {
-    setSearch("");
-    btnClose.current.classList.remove("active");
-    inpputSearch.current.focus();
-  };
+    setSearch('')
+    btnClose.current.classList.remove('active')
+    inpputSearch.current.focus()
+  }
 
   return (
     <>
@@ -69,16 +73,13 @@ function Cryptocurrencies({ displayItems }) {
           <LoadingCard count={counter} isloading={isLoading} error={error}>
             {cryptos &&
               cryptos.map((crypto) => (
-                <NavLink
-                  to={`/cryptocurrency/${crypto.uuid}`}
-                  key={crypto.uuid}
-                >
+                <NavLink to={`/cryptocurrency/${crypto.uuid}`} key={crypto.uuid}>
                   <div className="box">
                     <div className="content">
                       <h4>
                         {crypto.rank}.{crypto.name}
                       </h4>
-                      <img src={crypto.iconUrl} alt={crypto.name} />
+                      <LazyLoadImage src={crypto.iconUrl} alt={crypto.name} effect="blur" />
                     </div>
                     <div className="detiles">
                       <p>Price: {millify(crypto.price)}</p>
@@ -92,7 +93,7 @@ function Cryptocurrencies({ displayItems }) {
         </div>
       </div>
     </>
-  );
+  )
 }
 
-export default Cryptocurrencies;
+export default Cryptocurrencies

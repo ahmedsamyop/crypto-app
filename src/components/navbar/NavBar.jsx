@@ -1,32 +1,33 @@
-import React, { useRef } from "react";
-import "./navbar.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faHouse,
-  faChartLine,
-  faLocationPin,
-  faBars,
-} from "@fortawesome/free-solid-svg-icons";
+import React, { useRef } from 'react'
+import './navbar.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHouse, faChartLine, faLocationPin, faBars } from '@fortawesome/free-solid-svg-icons'
 import {
   // faWhatsapp,
   faGithub,
   faLinkedin,
   faTwitter,
-} from "@fortawesome/free-brands-svg-icons";
-import { NavLink } from "react-router-dom";
+} from '@fortawesome/free-brands-svg-icons'
+import { NavLink } from 'react-router-dom'
+
+// React Lazy Load Image Component
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+import 'react-lazy-load-image-component/src/effects/blur.css'
+
 function NavBar() {
-  const menuItems = useRef();
+  const menuItems = useRef()
   const handelToggle = () => {
-    menuItems.current.classList.toggle("show");
-  };
+    menuItems.current.classList.toggle('show')
+  }
   return (
     <div className="nav">
       <div className="navbar">
         <NavLink to="/">
           <div className="logo">
-            <img
-              src={require("../../images/cryptocurrency.png")}
+            <LazyLoadImage
+              src={require('../../images/cryptocurrency.png')}
               alt="cryptocurrency"
+              effect="blur"
             />
             <h3 className="logo-text">Cryptocurrency</h3>
           </div>
@@ -71,29 +72,21 @@ function NavBar() {
               </a>
             </li> */}
             <li className="contact">
-              <a
-                href="https://github.com/ahmedsamyop"
-                target={"_blank"}
-                rel="noreferrer"
-              >
+              <a href="https://github.com/ahmedsamyop" target={'_blank'} rel="noreferrer">
                 <div className="icon">
                   <FontAwesomeIcon icon={faGithub} />
                 </div>
               </a>
               <a
                 href="https://www.linkedin.com/in/ahmedsamyop"
-                target={"_blank"}
+                target={'_blank'}
                 rel="noreferrer"
               >
                 <div className="icon">
                   <FontAwesomeIcon icon={faLinkedin} />
                 </div>
               </a>
-              <a
-                href="https://twitter.com/ahmedsamyop"
-                target={"_blank"}
-                rel="noreferrer"
-              >
+              <a href="https://twitter.com/ahmedsamyop" target={'_blank'} rel="noreferrer">
                 <div className="icon">
                   <FontAwesomeIcon icon={faTwitter} />
                 </div>
@@ -106,7 +99,7 @@ function NavBar() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default NavBar;
+export default NavBar

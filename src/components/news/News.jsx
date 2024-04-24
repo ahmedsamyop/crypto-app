@@ -1,26 +1,29 @@
-import React, { useEffect, useState } from "react";
-import moment from "moment";
+import React, { useEffect, useState } from 'react'
+import moment from 'moment'
 
-import "./news.css";
-import LoadingCard from "../loading/LoadingCard";
-import ErrorFetch from "../../components/errorFetch/ErrorFetch";
+import './news.css'
+import LoadingCard from '../loading/LoadingCard'
+import ErrorFetch from '../../components/errorFetch/ErrorFetch'
 
-import { useGetCryptosNewsQuery } from "../../services/cryptoNewsApi";
-import { useGetCryptosQuery } from "../../services/cryptoApi";
+import { useGetCryptosNewsQuery } from '../../services/cryptoNewsApi'
+import { useGetCryptosQuery } from '../../services/cryptoApi'
+// React Lazy Load Image Component
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+import 'react-lazy-load-image-component/src/effects/blur.css'
 
 function News({ displayItems }) {
-  const counter = displayItems ? 6 : 12;
-  const [newsCategory, setNewsCategory] = useState("Cryptocurrency");
+  const counter = displayItems ? 6 : 12
+  const [newsCategory, setNewsCategory] = useState('Cryptocurrency')
   const { data, error, isLoading } = useGetCryptosNewsQuery({
     newsCategory,
     counter,
-  });
-  const { data: crypto } = useGetCryptosQuery(50);
-  const [cryptoNews, setCryptoNews] = useState([]);
+  })
+  const { data: crypto } = useGetCryptosQuery(50)
+  const [cryptoNews, setCryptoNews] = useState([])
 
   useEffect(() => {
-    setCryptoNews(data?.value);
-  }, [cryptoNews, data]);
+    setCryptoNews(data?.value)
+  }, [cryptoNews, data])
 
   return (
     <>
@@ -52,12 +55,13 @@ function News({ displayItems }) {
                     <div className="box">
                       <div className="head">
                         <h4>{news.name}</h4>
-                        <img
+                        <LazyLoadImage
                           src={
                             news?.image?.thumbnail?.contentUrl ||
-                            require("../../images/loading.png")
+                            require('../../images/loading.png')
                           }
                           alt={news.name}
+                          effect="blur"
                         />
                       </div>
                       <p>
@@ -67,28 +71,29 @@ function News({ displayItems }) {
                       </p>
                       <div className="bottom">
                         <div className="title">
-                          <img
+                          <LazyLoadImage
                             src={
                               news.provider[0]?.image?.thumbnail?.contentUrl ||
-                              require("../../images/loading.png")
+                              require('../../images/loading.png')
                             }
                             alt={news.name}
+                            effect="blur"
                           />
                           <h3>{news.provider[0]?.name}</h3>
                         </div>
                         <span className="time">
-                          {moment(news.datePublished).startOf("ss").fromNow()}
+                          {moment(news.datePublished).startOf('ss').fromNow()}
                         </span>
                       </div>
                     </div>
                   </a>
-                );
+                )
               })}
           </LoadingCard>
         </div>
       </div>
     </>
-  );
+  )
 }
 
-export default News;
+export default News
